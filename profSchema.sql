@@ -77,3 +77,27 @@ insert into Movie values
 	('I Sure Hope It Does',	2017, 1, 102, 'Metro golden Mayer', 	'ROG'),
 	('Mad Max',				2001, 1, 520, 'Metro golden Mayer', 	'SIG'),
 	('Hacker',				2017, 1, 150, 'Metro golden Mayer', 	'SIG');
+
+insert into StarsIn values
+	('Avatar', 2007, 'Hakon'),
+	('Green Mile', 2017, 'Hakon'),
+	('Tron', 1987, 'Hakon'),
+	('Hacker', 2017, 'Hakon'),
+	('Harry Potter 3', 2012, 'Tumi'),
+	('Tron', 2013, 'Tumi'),
+	('Titanic', 2015, 'Tumi'),
+	('Hacker', 2017, 'Tumi'),
+	('Star Wars', 1997, 'Hakon'),
+	('Star Wars', 1997, 'Tumi'),
+	('Star Wars', 1997, 'Gunnar'),
+	('Star Wars', 1997, 'Maria'),
+	('Star Wars', 1997, 'Isabella'),
+	('Star Trek', 1834, 'Veturlidi'),
+	('Star Trek', 1834, 'Patrik'),
+	('Guns Akimbo', 2001, 'Maria'),
+	('Guns Akimbo', 2001, 'Gunnar'),
+	('Road Work Ahead', 2010, 'Veturlidi'),
+	('I Sure Hope It Does', 2017, 'Veturlidi'),
+	('Mad Max', 2001, 'Isabella'),
+	('Mad Max', 2001, 'Tumi'),
+	('Mad Max', 2001, 'Veturlidi');
