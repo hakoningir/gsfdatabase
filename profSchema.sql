@@ -66,6 +66,7 @@ insert into Movie values
 	('Green Mile',			2017, 1, 250, 'Metro golden Mayer', 	'PAL'),
 	('Harry Potter 3',		2012, 1, 170, 'Disney Studios', 		'STI'),
 	('Tron',				2013, 1, 130, 'Disney Studios', 		'STI'),
+	('Tron', 1987, 0, 180, 'Metro golden Mayer', 'PAL'),
 	('Titanic',				2015, 1, 250, 'Disney Studios', 		'STI'),
 	('Star Wars',			1997, 1, 210, 'Disney Studios', 		'LIS'),
 	('Star Trek',			1834, 1, 169, 'Metro golden Mayer', 	'PAL'),
