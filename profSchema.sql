@@ -51,15 +51,17 @@ insert into MovieStar values
 insert into Studio values
 	('Metro golden Mayer' ,'Calefornia' ,'SIG'),
 	('Disney Studios' ,'Rio' ,'STI'),
-	('Dreamworks' ,'Raufarhofn'),
-	('Paramount' ,'Kopasker');
+	('Dreamworks' ,'Raufarhofn','STD'),
+	('Paramount' ,'Kopasker','FML');
 	
 insert into MovieExec values
 	('Siggi', 'Bolholt 10', 'SIG', 150),
 	('Palli', 'Bolholt 11', 'PAL', 930),
 	('Stína', 'Bolholt 12', 'STI', 30),
 	('Lísa' , 'Bolholt 13', 'LIS', 100),
-	('Rögnvaldur', 'Ísafjörður 83', 'ROG', 10000);
+	('Rögnvaldur', 'Ísafjörður 83', 'ROG', 10000),
+	('Sjonatan', 'Akranesvegur 29', 'STD', 50),
+	('Frida', 'Glerartorg 10', 'FML', 310);
 
 insert into Movie values
 	('Avatar',				2007, 1, 300, 'Metro golden Mayer', 	'SIG'),
