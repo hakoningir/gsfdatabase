@@ -64,19 +64,19 @@ insert into MovieExec values
 	('Frida', 'Glerartorg 10', 'FML', 310);
 
 insert into Movie values
-	('Avatar',				2007, 1, 300, 'Metro golden Mayer', 	'SIG'),
-	('Green Mile',			2017, 1, 250, 'Metro golden Mayer', 	'PAL'),
-	('Harry Potter 3',		2012, 1, 170, 'Disney Studios', 		'STI'),
-	('Tron',				2013, 1, 130, 'Disney Studios', 		'STI'),
-	('Tron', 1987, 0, 180, 'Metro golden Mayer', 'PAL'),
-	('Titanic',				2015, 1, 250, 'Disney Studios', 		'STI'),
-	('Star Wars',			1997, 1, 210, 'Disney Studios', 		'LIS'),
-	('Star Trek',			1834, 1, 169, 'Metro golden Mayer', 	'PAL'),
-	('Guns Akimbo',			2001, 1, 170, 'Disney Studios', 		'LIS'),
-	('Road Work Ahead',		2010, 1, 309, 'Metro golden Mayer', 	'ROG'),
-	('I Sure Hope It Does',	2017, 1, 102, 'Metro golden Mayer', 	'ROG'),
-	('Mad Max',				2001, 1, 520, 'Metro golden Mayer', 	'SIG'),
-	('Hacker',				2017, 1, 150, 'Metro golden Mayer', 	'SIG');
+	('Avatar', 2007, 	300,0, 'Metro golden Mayer', 	'SIG'),
+	('Green Mile', 2017, 	250,1, 'Metro golden Mayer', 	'PAL'),
+	('Harry Potter 3', 2012,170,1, 'Disney Studios', 		'STI'),
+	('Tron', 2013, 		130,1, 'Disney Studios', 		'STI'),
+	('Tron', 1987, 		180,0, 'Metro golden Mayer', 'PAL'),
+	('Titanic', 2015, 	250,1, 'Disney Studios', 		'STI'),
+	('Star Wars', 1997, 	210,1, 'Disney Studios', 		'LIS'),
+	('Star Trek', 1834, 	169,1, 'Metro golden Mayer', 	'PAL'),
+	('Guns Akimbo',	2001, 	170,1, 'Disney Studios', 		'LIS'),
+	('Road Work Ahead', 2010, 309,1, 'Metro golden Mayer', 	'ROG'),
+	('I Sure Hope It Does',	2017, 102,1, 'Metro golden Mayer', 	'ROG'),
+	('Mad Max', 2001, 	520,1, 'Metro golden Mayer', 	'SIG'),
+	('Hacker', 2017, 	150,1, 'Metro golden Mayer', 	'SIG');
 
 insert into StarsIn values
 	('Avatar', 2007, 'Hakon'),
