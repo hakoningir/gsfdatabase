@@ -48,4 +48,46 @@ select name from MovieStar as m1 where
 -- find, for each movie star that has starred in at least two movies, the total sum lenght of their movies
 .system echo '2.c'
 select starName, sum(length) from StarsIn left outer join Movie on movieTitle = title and movieYear = year group by starName having count(*) >= 2;
-select starName, sum(length) from StarsIn, Movie where title = movieTitle and year = movieYear group by starName having count(*) >= 2;
+
+-- finnið fyrir alla kvikmyndaframleiðendur hve margar kvikmyndir framleiðandinn hefur framleitt og heildarlengd, ath. ekki studio
+-- find for all movie producers how many movies the producer has produced and the total lenght of the movies, producers not the studios
+.system echo '3.a'
+select name, count(title), sum(length) from MovieExec, Movie where cert = producerC group by producerC;
+
+-- finnið nafn og heimilisfang þess kvikmyndavers sem framleitt hefur mestu heildarlengd kvikmynda
+-- find the name and address of the movie studio that has produceced the largest total length of movies
+.system echo '3.b'
+select name, address from Studio, Movie where name = studioName group by studioName order by sum(length) desc limit 1;
+
+-- finnið nafn og heimilisfang þeirrar kvikmyndastjörnu sem leikið hefur í mestri heildarlengd kvikmynda
+-- find the name and address of the movie star that has starred in the longest total length of movies
+.system echo '3.c'
+select name, address from MovieStar where 
+	name in 
+	(select starName from starsIn, movie where 
+		movieTitle = title and
+		movieYear = year 
+		group by starName 
+		order by sum(length) desc limit 1);	
+
+-- finnið þær kvikmyndastjörnur sem léku í öllum kvikmyndum þar sem titillinn byrjar á stöfunum 'Star Trek'
+-- find all moviestars that starred in movies starting with the letters 'Star Trek'
+.system echo 4.a
+select name from MovieStar where 
+	not exists
+	(select * from Movie where 
+		title like 'Star Trek%' and
+		not exists
+		(select * from StarsIn where
+			title = movieTitle and 
+			year = movieYear and 
+			name = starName));
+
+-- finnið nafn þeirrar kvikmyndastjörnu sem leikið hefur í kvikmyndum með flestum framleiðendum
+-- find the name of the movie star that has starred in movies with the largest number of different producers
+.system echo 4.b
+select starName from StarsIn, Movie where 
+	movieTitle = title and
+	movieYear = year
+	group by StarName
+	order by sum(distinct producerC) desc limit 1;
