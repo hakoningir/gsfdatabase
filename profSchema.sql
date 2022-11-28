@@ -50,7 +50,7 @@ insert into MovieStar values
 	
 insert into Studio values
 	('Metro golden Mayer' ,'Calefornia' ,'SIG'),
-	('Disney Studios' ,'Rio' ,'STI'),
+	('Disney Studios' ,'Dufnaholar' ,'STI'),
 	('Dreamworks' ,'Raufarhofn','STD'),
 	('Paramount' ,'Kopasker','FML'),
 	('Warner Brothers', 'Ibizafjordur', 'PAL');
