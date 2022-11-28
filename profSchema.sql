@@ -52,7 +52,8 @@ insert into Studio values
 	('Metro golden Mayer' ,'Calefornia' ,'SIG'),
 	('Disney Studios' ,'Rio' ,'STI'),
 	('Dreamworks' ,'Raufarhofn','STD'),
-	('Paramount' ,'Kopasker','FML');
+	('Paramount' ,'Kopasker','FML'),
+	('Warner Brothers', 'Ibizafjordur', 'PAL');
 	
 insert into MovieExec values
 	('Siggi', 'Bolholt 10', 'SIG', 150),
@@ -76,7 +77,8 @@ insert into Movie values
 	('Road Work Ahead', 2010, 309,1, 'Metro golden Mayer', 	'ROG'),
 	('I Sure Hope It Does',	2017, 102,1, 'Metro golden Mayer', 	'ROG'),
 	('Mad Max', 2001, 	520,1, 'Metro golden Mayer', 	'SIG'),
-	('Hacker', 2017, 	150,1, 'Metro golden Mayer', 	'SIG');
+	('Hacker', 2017, 	150,1, 'Metro golden Mayer', 	'SIG'),
+	('Gone With The Wind', 1939, 238, 0, 'Warner Brothers', 'PAL');
 
 insert into StarsIn values
 	('Avatar', 2007, 'Hakon'),
