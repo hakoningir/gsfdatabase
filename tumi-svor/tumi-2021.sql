@@ -44,10 +44,13 @@ select name from MovieStar as m1 where
 			s2.starName = m2.name));
 
 -- 2.c
--- finni[ fyrir sérhverja kvikmyndastjörnu, sem leikið hefur a.m.k. tveimur kvikmyndum, heildarlengd allra kvikmynda þeirra
+-- finnið fyrir sérhverja kvikmyndastjörnu, sem leikið hefur a.m.k. tveimur kvikmyndum, heildarlengd allra kvikmynda þeirra
 -- find, for each movie star that has starred in at least two movies, the total sum lenght of their movies
 .system echo '2.c'
-select starName, sum(length) from StarsIn left outer join Movie on movieTitle = title and movieYear = year group by starName having count(*) >= 2;
+select starName, sum(length) from StarsIn 
+	left outer join Movie on 
+		movieTitle = title and movieYear = year 
+	group by starName having count(*) >= 2;
 
 -- finnið fyrir alla kvikmyndaframleiðendur hve margar kvikmyndir framleiðandinn hefur framleitt og heildarlengd, ath. ekki studio
 -- find for all movie producers how many movies the producer has produced and the total lenght of the movies, producers not the studios
