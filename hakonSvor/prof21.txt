@@ -6,6 +6,9 @@ SELECT title, year
 FROM Movie
 ORDER BY title
 LIMIT 1;
+
+svar:
+Avatar │ 2007
 -----------------------------------------------------------------------------
 1b
 Finnið nöfn þeirra kvikmyndaframleiðenda sem ekki hafa framleitt neina
@@ -14,29 +17,175 @@ kvikmynd.
 SELECT name FROM MovieExec WHERE NOT EXISTS( SELECT * 	FROM Movie WHERE 
 cert = producerC AND NOT EXISTS ( SELECT * FROM StarsIn 
 WHERE title <> movieTitle AND year <> movieYear));
+
+svar:
+├────────────┤
+│ Siggi      │
+│ Palli      │
+│ Stína      │
+│ Lísa       │
+│ Rögnvaldur │
+│ Sjonatan   │
+│ Frida      │
+└────────────┘
 -----------------------------------------------------------------------------
 1c
 Finnið nöfn þeirra kvikmyndavera sem ekki hafa framleitt kvikmynd sem 
-jack nicholson lék í
+Veturlidi lék í
 
 SELECT name FROM studio WHERE NOT EXISTS (
 SELECT * FROM MOVIE, StarsIn WHERE title = movieTitle AND 
 year = movieYear AND name = studioName AND starName = "Veturlidi");
+
+svar:
+├─────────────────┤
+│ Dreamworks      │
+│ Paramount       │
+│ Warner Brothers │
+└─────────────────┘
 -----------------------------------------------------------------------------
 2a
 Finnið nöfn þeirra kvikmynda sem hafa samnefnda kvikmynd.
 
+SELECT title FROM Movie group by title having count(title) > 1;
 
+svar:
+│ Tron  │
 -----------------------------------------------------------------------------
 2b
 Finnið nöfn þeirra kvikmyndastjarna sem hafa leikið með öllum öðrum kvenkyns
 kvikmyndastjörnum í einhverri kvikmynd.
 
+SELECT name 
+FROM MovieStar as m1 
+WHERE NOT EXISTS ( 
+SELECT name 
+FROM MovieStar as m2 
+WHERE m2.gender like "f" AND 
+m1.name <> m2.name AND NOT EXISTS ( 
+SELECT * 
+FROM StarsIn as s1, StarsIn as s2 WHERE 
+s1.movieTitle = s2.movieTitle AND 
+s1.starname = m1.name AND 
+s2.starname = m2.name AND 
+s1.movieYear = s2.movieYear));
 
+svar:
+
+│ Gunnar   │
+│ Hakon    │
+│ Isabella │
+│ Maria    │
+│ Tumi     │
 -----------------------------------------------------------------------------
 2c
 Finnið fyrir sérhverja kvikmyndastjörnu sem leikið hefur í amk tveimur 
 kvikmyndum, heildarlengd allra kvikmynda hennar eða hans.
 
 
+SELECT starName,SUM(length) FROM StarsIn,movie WHERE movieTitle = title AND 
+movieYear = year GROUP BY starName HAVING count(title) > 1;
+
+svar:
+├───────────┼─────────────┤
+│ Gunnar    │ 380         │
+│ Hakon     │ 1090        │
+│ Isabella  │ 730         │
+│ Maria     │ 380         │
+│ Tumi      │ 1430        │
+│ Veturlidi │ 1220        │
+└───────────┴─────────────┘
 -----------------------------------------------------------------------------
+3a
+Finnið alla kvikmyndaframleiðendur hve margar kvikmyndir framleiðandinn hefur 
+framleitt og heildarlengd kvikmyndanna. Athugið að kvikmyndaframleiðandinn(movieExec) er 
+ekki sama og kvikmyndaver(studio).
+
+SELECT name, count(title), sum(length) FROM movieExec,Movie WHERE cert = producerC GROUP BY producerC;
+
+svar:
+├────────────┼──────────────┼─────────────┤
+│ Lísa       │ 2            │ 380         │
+│ Palli      │ 4            │ 837         │
+│ Rögnvaldur │ 2            │ 411         │
+│ Siggi      │ 3            │ 970         │
+│ Stína      │ 4            │ 670         │
+└────────────┴──────────────┴─────────────┘
+-----------------------------------------------------------------------------
+3b
+Finnið nafn og heimilisfang þess kvikmyndavers(studio) sem framleitt hefur 
+mestu heildarlegnd kvikmynda.
+
+SELECT name, address FROM studio, movie WHERE name = studioName 
+GROUP BY studioName ORDER BY SUM(length) desc limit 1;
+
+svar:
+├────────────────────┼────────────┤
+│ Metro golden Mayer │ California │
+└────────────────────┴────────────┘
+-----------------------------------------------------------------------------
+3c
+Finnið nafn og heimilisfang þeirrar kvikmyndastjörnu sem leikið hefur í mestri
+heildarlengd kvikmynda.
+
+SELECT name, address FROM MovieStar,StarsIn,Movie WHERE name = starName 
+GROUP BY name ORDER BY SUM(length) desc limit 1;
+
+svar:
+├──────┼───────────┤
+│ Tumi │ Kopavogur │
+└──────┴───────────┘
+-----------------------------------------------------------------------------
+4a
+Finnið þær kvikmyndastjörnur sem léku í öllum kvikmyndum þar sem titillinn byrjar
+á stöfunum 'Star Trek'
+
+SELECT name FROM MovieStar WHERE NOT EXISTS (SELECT * FROM Movie WHERE title LIKE "Star Trek%" 
+AND NOT EXISTS ( SELECT * FROM StarsIn WHERE name = starName AND title = movieTitle));
+
+svar:
+├───────────┤
+│ Veturlidi │
+└───────────┘
+-----------------------------------------------------------------------------
+4b
+Finnið nafn þeirrar kvikmyndastjörnu sem leikið hefur í kvikmyndum með flestum 
+framleiðendum.
+
+SELECT starName FROM StarsIn,Movie WHERE movieTitle = title AND year = movieYear 
+GROUP BY starName ORDER BY COUNT(DISTINCT producerC) desc limit 1;
+
+svar:
+├───────────┤
+│ Veturlidi │
+└───────────┘
+-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
