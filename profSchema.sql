@@ -49,7 +49,7 @@ insert into MovieStar values
 	('Patrik' ,'Poland' ,'M' ,'Feb');
 	
 insert into Studio values
-	('Metro golden Mayer' ,'Calefornia' ,'SIG'),
+	('Metro golden Mayer' ,'California' ,'SIG'),
 	('Disney Studios' ,'Dufnaholar' ,'STI'),
 	('Dreamworks' ,'Raufarhofn','STD'),
 	('Paramount' ,'Kopasker','FML'),
