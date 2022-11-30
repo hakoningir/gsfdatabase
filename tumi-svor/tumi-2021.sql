@@ -52,16 +52,23 @@ select starName, sum(length) from StarsIn
 		movieTitle = title and movieYear = year 
 	group by starName having count(*) >= 2;
 
+-- 3.a
 -- finnið fyrir alla kvikmyndaframleiðendur hve margar kvikmyndir framleiðandinn hefur framleitt og heildarlengd, ath. ekki studio
 -- find for all movie producers how many movies the producer has produced and the total lenght of the movies, producers not the studios
 .system echo '3.a'
-select name, count(title), sum(length) from MovieExec, Movie where cert = producerC group by producerC;
+select name, count(title), sum(length) from MovieExec, Movie where cert = producerC group by cert;
 
+-- 3.b
 -- finnið nafn og heimilisfang þess kvikmyndavers sem framleitt hefur mestu heildarlengd kvikmynda
 -- find the name and address of the movie studio that has produceced the largest total length of movies
 .system echo '3.b'
-select name, address from Studio, Movie where name = studioName group by studioName order by sum(length) desc limit 1;
+select name, address from Studio, Movie where 
+	name = studioName 
+	group by studioName 
+	order by sum(length) 
+	desc limit 1;
 
+-- 3.c
 -- finnið nafn og heimilisfang þeirrar kvikmyndastjörnu sem leikið hefur í mestri heildarlengd kvikmynda
 -- find the name and address of the movie star that has starred in the longest total length of movies
 .system echo '3.c'
@@ -93,4 +100,4 @@ select starName from StarsIn, Movie where
 	movieTitle = title and
 	movieYear = year
 	group by StarName
-	order by sum(distinct producerC) desc limit 1;
+	order by count(distinct producerC) desc limit 1;
