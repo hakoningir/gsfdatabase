@@ -1,22 +1,22 @@
 # gsfdatabase
 
-gagnagrunnur byggður á gömlum **TÖL303G - Gagnsafnsfræði** lokaprófum, útbúinn til þess að hægt sé að prufa SQLite fyrispurnir sem settar eru fyrir í þeim prófum.
+Gagnagrunnur byggður á gömlum **TÖL303G - Gagnsafnsfræði** lokaprófum, útbúinn til þess að hægt sé að prufa SQLite fyrispurnir sem settar eru fyrir í þeim prófum.
 
 ## innihald
 
-gagnagrunnurinn inniheldur **5** töflur:
+Gagnagrunnurinn inniheldur **5** töflur:
 * MovieExec
 * Studio
 * Movie
 * MovieStar
 * StarsIn
 
-höfundar hafa nú þegar bætt gögnum inn í eftirfarandi töflur en það má alltaf bæta við og breyta þannig endilega skelltu í *pull request* ef þér finnst eitthvað vanta
+Höfundar hafa nú þegar bætt gögnum inn í eftirfarandi töflur en það má alltaf bæta við og breyta þannig endilega skelltu í *pull request* ef þér finnst eitthvað vanta
 
-## höfundar
-- gunnar björn 
+## Höfundar
+- Gunnar Björn 
   - gbt6@hi.is
-- hákon ingi
+- Hákon Ingi
   - hir12@hi.is
-- þorvaldur tumi
+- Þorvaldur Tumi
   - ttb3@hi.is

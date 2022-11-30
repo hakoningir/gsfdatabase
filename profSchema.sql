@@ -49,7 +49,7 @@ insert into MovieStar values
 	('Patrik' ,'Poland' ,'M' ,'Feb');
 	
 insert into Studio values
-	('Metro golden Mayer' ,'Calefornia' ,'SIG'),
+	('Metro golden Mayer' ,'California' ,'SIG'),
 	('Disney Studios' ,'Dufnaholar' ,'STI'),
 	('Dreamworks' ,'Raufarhofn','STD'),
 	('Paramount' ,'Kopasker','FML'),
@@ -73,6 +73,7 @@ insert into Movie values
 	('Titanic', 2015, 	250,1, 'Disney Studios', 		'STI'),
 	('Star Wars', 1997, 	210,1, 'Disney Studios', 		'LIS'),
 	('Star Trek', 1834, 	169,1, 'Metro golden Mayer', 	'PAL'),
+	('Star Trek Next Gen', 1901, 120, 1, 'Disney Studios', 'STI'),
 	('Guns Akimbo',	2001, 	170,1, 'Disney Studios', 		'LIS'),
 	('Road Work Ahead', 2010, 309,1, 'Metro golden Mayer', 	'ROG'),
 	('I Sure Hope It Does',	2017, 102,1, 'Metro golden Mayer', 	'ROG'),
@@ -102,4 +103,6 @@ insert into StarsIn values
 	('I Sure Hope It Does', 2017, 'Veturlidi'),
 	('Mad Max', 2001, 'Isabella'),
 	('Mad Max', 2001, 'Tumi'),
-	('Mad Max', 2001, 'Veturlidi');
+	('Mad Max', 2001, 'Veturlidi'),
+	('Star Trek Next Gen', 1901, 'Veturlidi');
+
