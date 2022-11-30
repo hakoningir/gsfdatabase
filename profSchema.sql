@@ -46,7 +46,8 @@ insert into MovieStar values
 	('Maria', 'Reykjavik' ,'F' ,'June'),
 	('Isabella', 'Reykjavik', 'F', 'Feb'),
 	('Veturlidi' ,'Isafjordur','M' ,'Nov'),
-	('Patrik' ,'Poland' ,'M' ,'Feb');
+	('Patrik' ,'Poland' ,'M' ,'Feb'),
+	('Enginn', 'Hvergi', 'M', 'Aldrei');
 	
 insert into Studio values
 	('Metro golden Mayer' ,'California' ,'SIG'),

@@ -1,3 +1,12 @@
+-- |||||||||||||||||||||||||||||||||
+-- ||    __    sjomli.is    __    ||
+-- ||  _/  |_ __ __  _____ |__|   ||
+-- ||  \   __\  |  \/     \|  |   ||
+-- ||   |  | |  |  /  Y Y  \  |   ||
+-- ||   |__| |____/|__|_|__/__|   ||
+-- ||                             ||
+-- |||||||||||||||||||||||||||||||||
+
 -- 1.a
 -- finnið titil og ár kvikmyndarinnar sem hefur titil sem er fremst í stafrófröð allra titla
 -- find the title and year of the movie whose title is the first in alphabetic order among all titles
