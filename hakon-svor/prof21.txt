@@ -108,15 +108,15 @@ ON m.producerC = me.cert
 GROUP BY me.cert;
 
 svar:
-name       | IFNULL(SUM(length),0) | numberOfMovies
----------- | --------------------- | --------------
-Frida      | 0                     | 0             
-Lísa       | 380                   | 2             
-Palli      | 837                   | 4             
-Rögnvaldur | 411                   | 2             
-Siggi      | 970                   | 3             
-Sjonatan   | 0                     | 0             
-Stína      | 670                   | 4             
+|──────────|───────────────────────|──────|
+|Frida     | 0                     | 0    |         
+|Lísa      | 380                   | 2    |         
+|Palli     | 837                   | 4    |         
+|Rögnvaldur| 411                   | 2    |         
+|Siggi     | 970                   | 3    |         
+|Sjonatan  | 0                     | 0    |         
+|Stína     | 670                   | 4    |
+└──────────┴───────────────────────┴──────┘
 -----------------------------------------------------------------------------
 3b
 Finnið nafn og heimilisfang þess kvikmyndavers(studio) sem framleitt hefur 
