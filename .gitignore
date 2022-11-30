@@ -2,4 +2,5 @@
 **/*.db
 **/*.class
 **/*.exe
-.class
+**/*.jar
+
